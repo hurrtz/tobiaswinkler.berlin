@@ -37,7 +37,6 @@ pnpm-debug.log*
 # Build output
 dist/
 build/
-public/
 .tmp/
 tmp/
 temp/
