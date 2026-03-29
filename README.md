@@ -27,7 +27,10 @@ npm run build
 Set these in a local `.env` file if needed:
 
 - `VITE_CONTACT_EMAIL` to change the recipient used by the contact form
-- `VITE_PORTRAIT_URL` to point the hero image to a real portrait
+- `VITE_PROFILE_IMAGE_URL` to override the default portrait image
+- `VITE_INSTAGRAM_URL` to override the Instagram profile link
+- `VITE_X_URL` to override the X profile link
+- `VITE_XING_URL` to override the Xing profile link
 
 ## Contact form
 

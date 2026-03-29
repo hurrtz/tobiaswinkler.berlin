@@ -7,6 +7,11 @@ header('Content-Type: application/json; charset=utf-8');
 const MIN_ELAPSED_MS = 2500;
 const RATE_LIMIT_WINDOW_SECONDS = 900;
 const RATE_LIMIT_MAX_ATTEMPTS = 5;
+const MAX_TOPIC_LENGTH = 120;
+const MAX_NAME_LENGTH = 120;
+const MAX_EMAIL_LENGTH = 200;
+const MAX_COMPANY_LENGTH = 160;
+const MAX_MESSAGE_LENGTH = 5000;
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -91,6 +96,16 @@ if ($website !== '' || ($elapsedMs > 0 && $elapsedMs < MIN_ELAPSED_MS)) {
 
 if ($topic === '' || $name === '' || $email === false || $message === '') {
     respond(422, ['message' => 'Please complete all required fields.']);
+}
+
+if (
+    mb_strlen($topic) > MAX_TOPIC_LENGTH ||
+    mb_strlen($name) > MAX_NAME_LENGTH ||
+    mb_strlen((string) $email) > MAX_EMAIL_LENGTH ||
+    mb_strlen($company) > MAX_COMPANY_LENGTH ||
+    mb_strlen($message) > MAX_MESSAGE_LENGTH
+) {
+    respond(422, ['message' => 'One or more fields are too long.']);
 }
 
 $clientKey = (string) ($_SERVER['REMOTE_ADDR'] ?? 'unknown');
