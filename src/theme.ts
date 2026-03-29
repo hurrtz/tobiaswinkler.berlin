@@ -3,15 +3,20 @@ import { createSystem, defaultConfig, defineConfig } from '@chakra-ui/react';
 const config = defineConfig({
   strictTokens: true,
   globalCss: {
-    'html, body': {
-      bg: 'gray.50',
-      color: 'gray.900'
+    html: {
+      bg: 'bg',
+      color: 'fg',
+      scrollPaddingTop: '6rem'
+    },
+    body: {
+      bg: 'bg',
+      color: 'fg'
     },
     a: {
       textUnderlineOffset: '3px'
     },
     '::selection': {
-      bg: 'blue.100'
+      bg: 'blue.subtle'
     }
   }
 });
