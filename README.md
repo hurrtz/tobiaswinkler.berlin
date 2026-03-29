@@ -33,16 +33,13 @@ Set these in a local `.env` file if needed:
 
 ## Contact form
 
-The frontend posts to `public/contact.php`. On a PHP-capable host this script sends mail to the
-recipient configured via the server-side `CONTACT_EMAIL` environment variable.
+The frontend posts to `public/contact.php`. On a PHP-capable host this script sends mail to
+`contact@tobiaswinkler.berlin`.
 
 The endpoint includes basic spam protection:
 
 - a hidden honeypot field
 - a minimum form-completion time check
 - IP-based rate limiting via temporary files
-
-If `CONTACT_EMAIL` is missing or invalid, the endpoint responds with a configuration error instead
-of exposing a public fallback address.
 
 If you deploy behind Apache, `public/.htaccess` contains an SPA fallback rewrite.
