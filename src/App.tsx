@@ -39,7 +39,6 @@ type ContactRequestPayload = ContactFormState & {
 };
 
 const CONTACT_ENDPOINT = '/contact.php';
-const contactEmail = import.meta.env.VITE_CONTACT_EMAIL ?? 'contact@tobiaswinkler.berlin';
 const profileImageUrl = import.meta.env.VITE_PROFILE_IMAGE_URL ?? '/profile-photo.png';
 const instagramUrl = import.meta.env.VITE_INSTAGRAM_URL ?? 'https://www.instagram.com/hurrtz';
 const xUrl = import.meta.env.VITE_X_URL ?? 'https://x.com/hurrtz';
@@ -133,6 +132,7 @@ const experiences = [
 
 const projects = [
   {
+    slug: 'schnackai',
     name: 'SchnackAI app',
     category: 'Independent product',
     href: undefined,
@@ -140,6 +140,7 @@ const projects = [
       'A bring-your-own-key AI product built around flexible conversations, where providers and models can be switched live without breaking the active thread.'
   },
   {
+    slug: 'rasseportrait',
     name: 'Rasseportrait',
     category: 'Fan project',
     href: 'https://hurrtz.github.io/rasseportrait',
@@ -147,6 +148,7 @@ const projects = [
       'A fan project for the podcast "Tierisch Menschlich" by Martin Rütter and Katharina Adick, designed to turn breed-related content into a clearer, more navigable digital format.'
   },
   {
+    slug: 'mut-taucher',
     name: 'mut-taucher.de',
     category: 'Client project',
     href: 'https://mut-taucher.de',
@@ -174,33 +176,35 @@ const socialLinks: SocialLink[] = [
 ] as const;
 
 const contactTopics = [
+  'General',
   'Engineering leadership',
   'Frontend architecture',
   'Consulting',
-  'New product idea'
+  'New product idea',
+  ...projects.map((project) => project.name)
 ] as const;
 
-const initialFormState: ContactFormState = {
-  topic: contactTopics[0],
-  name: '',
-  email: '',
-  company: '',
-  message: ''
-};
+const defaultContactTopic = contactTopics[0];
 
-function buildMailtoLink(formState: ContactFormState) {
-  const subject = `${formState.topic} inquiry from ${formState.name}`.trim();
-  const body = [
-    `Topic: ${formState.topic}`,
-    `Name: ${formState.name}`,
-    `Email: ${formState.email}`,
-    `Company: ${formState.company || 'Not provided'}`,
-    '',
-    formState.message
-  ].join('\n');
+function getInitialTopic(search: string): string {
+  const requestedProject = new URLSearchParams(search).get('p')?.trim().toLowerCase();
 
-  const params = new URLSearchParams({ subject, body });
-  return `mailto:${contactEmail}?${params.toString()}`;
+  if (!requestedProject) {
+    return defaultContactTopic;
+  }
+
+  const matchedProject = projects.find((project) => project.slug === requestedProject);
+  return matchedProject?.name ?? defaultContactTopic;
+}
+
+function getInitialFormState(search = ''): ContactFormState {
+  return {
+    topic: getInitialTopic(search),
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  };
 }
 
 type SectionHeadingProps = {
@@ -228,7 +232,9 @@ function SectionHeading({ title, description }: SectionHeadingProps) {
 }
 
 function App() {
-  const [formState, setFormState] = useState<ContactFormState>(initialFormState);
+  const [formState, setFormState] = useState<ContactFormState>(() =>
+    getInitialFormState(typeof window !== 'undefined' ? window.location.search : '')
+  );
   const [honeypot, setHoneypot] = useState('');
   const [formStartedAt, setFormStartedAt] = useState(() => Date.now());
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -236,15 +242,6 @@ function App() {
 
   async function handleSubmit(event: FormEvent<HTMLDivElement>) {
     event.preventDefault();
-
-    const draftBody = [
-      `Topic: ${formState.topic}`,
-      `Name: ${formState.name}`,
-      `Email: ${formState.email}`,
-      `Company: ${formState.company || 'Not provided'}`,
-      '',
-      formState.message
-    ].join('\n');
 
     setIsSubmitting(true);
     setStatusMessage('');
@@ -270,7 +267,7 @@ function App() {
         | null;
 
       if (response.ok) {
-        setFormState(initialFormState);
+        setFormState(getInitialFormState(typeof window !== 'undefined' ? window.location.search : ''));
         setHoneypot('');
         setFormStartedAt(Date.now());
         setStatusMessage(responsePayload?.message ?? 'Message sent successfully.');
@@ -282,19 +279,9 @@ function App() {
       );
       return;
     } catch {
-      // If no backend endpoint is available in the current environment, fall back below.
-      try {
-        if (navigator.clipboard?.writeText) {
-          await navigator.clipboard.writeText(draftBody);
-        }
-      } catch {
-        // Clipboard support is optional in the fallback flow.
-      }
-
       setStatusMessage(
-        'The direct send endpoint is not available here yet. A draft email will open as fallback, and the message was copied to your clipboard when allowed.'
+        'The contact endpoint is not available right now. Please try again later.'
       );
-      window.location.assign(buildMailtoLink(formState));
     } finally {
       setIsSubmitting(false);
     }
@@ -403,9 +390,6 @@ function App() {
                 <Button asChild colorPalette="blue" rounded="sm" size="sm">
                   <a href="#contact">Get in touch</a>
                 </Button>
-                <Link href={`mailto:${contactEmail}`} fontSize="sm" fontWeight="medium" color="fg.muted">
-                  Email directly
-                </Link>
               </HStack>
 
               <Separator borderColor="border" />
@@ -659,8 +643,8 @@ function App() {
             >
               <Stack gap="6">
                 <SectionHeading
-                  title="Use the form, or just send a direct email."
-                  description="The form stays frontend-only and opens a prefilled draft in the default mail app. It is simple, durable, and easy to replace later with a real backend."
+                  title="Use the form to start a conversation."
+                  description="The site does not publish a direct email address. Messages go through the contact form and the server-side endpoint behind it."
                 />
 
                 <Stack gap="4">
@@ -673,9 +657,6 @@ function App() {
                       consulting, and product ideas that need a clear execution path.
                     </Text>
                   </Stack>
-                  <Link href={`mailto:${contactEmail}`} color="blue.fg" fontSize="sm">
-                    {contactEmail}
-                  </Link>
                 </Stack>
               </Stack>
 
@@ -794,19 +775,15 @@ function App() {
                       rounded="sm"
                     />
                     <Field.HelperText color="fg.subtle">
-                      On production this sends directly to {contactEmail}. The endpoint also uses
-                      basic spam protection and falls back to a draft email if direct send is not
-                      available.
+                      Messages are sent through the server-side contact endpoint, which also uses
+                      basic spam protection.
                     </Field.HelperText>
                   </Field.Root>
 
-                  <HStack justify="space-between" align="start" wrap="wrap" gap="3">
+                  <HStack justify="start" align="start" wrap="wrap" gap="3">
                     <Button type="submit" colorPalette="blue" rounded="sm" loading={isSubmitting}>
                       Send message
                     </Button>
-                    <Text fontSize="sm" color="fg.subtle">
-                      Recipient: {contactEmail}
-                    </Text>
                   </HStack>
 
                   {statusMessage ? (
@@ -855,9 +832,9 @@ function App() {
                   +49 163 5460791
                 </Link>
 
-                <Text color="fg">Email</Text>
-                <Link href={`mailto:${contactEmail}`} color="blue.fg">
-                  {contactEmail}
+                <Text color="fg">Contact</Text>
+                <Link href="#contact" color="blue.fg">
+                  Use the contact form on this website
                 </Link>
               </Grid>
 

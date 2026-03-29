@@ -114,7 +114,12 @@ if (!remember_attempt($clientKey, RATE_LIMIT_WINDOW_SECONDS, RATE_LIMIT_MAX_ATTE
     respond(429, ['message' => 'Too many messages were sent recently. Please wait a little and try again.']);
 }
 
-$recipient = getenv('CONTACT_EMAIL') ?: 'contact@tobiaswinkler.berlin';
+$recipient = trim((string) (getenv('CONTACT_EMAIL') ?: ''));
+
+if ($recipient === '' || filter_var($recipient, FILTER_VALIDATE_EMAIL) === false) {
+    respond(500, ['message' => 'The contact endpoint is not configured.']);
+}
+
 $subject = sprintf('[tobiaswinkler.berlin] %s from %s', $topic, $name);
 $body = implode("\n", [
     'New contact form submission',
