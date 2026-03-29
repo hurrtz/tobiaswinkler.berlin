@@ -367,11 +367,10 @@ function App() {
                   letterSpacing="tight"
                   color="fg"
                 >
-                  Engineering manager and frontend specialist in Berlin.
+                  Tobias Winkler
                 </Heading>
                 <Text fontSize="md" lineHeight="tall" color="fg.muted">
-                  AI-native leadership, clean product work, and frontend systems that stay
-                  understandable as teams and tooling evolve.
+                  Engineering Manager at Omio. AI-native teams, frontend systems, product work.
                 </Text>
                 <Stack gap="1">
                   <Text fontSize="sm" color="fg.subtle">
@@ -422,7 +421,7 @@ function App() {
                     color="fg"
                     maxW="4xl"
                   >
-                    Simple, readable, and built to communicate the essentials quickly.
+                    Engineering leadership, frontend systems, and AI-native execution.
                   </Heading>
                   <Text fontSize={{ base: 'lg', md: 'xl' }} lineHeight="tall" color="fg.muted" maxW="3xl">
                     My background sits between hands-on frontend implementation and engineering
