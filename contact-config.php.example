@@ -1,0 +1,10 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'brevoApiKey' => 'replace-with-real-brevo-api-key',
+    'senderEmail' => 'contact@tobiaswinkler.berlin',
+    'senderName' => 'Tobias Winkler Website',
+    'recipientEmail' => 'contact@tobiaswinkler.berlin',
+];

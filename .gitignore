@@ -25,6 +25,7 @@ client/bower_components/
 !.env.sample
 !.env.template
 *.local
+contact-config.php
 
 # Logs
 logs/

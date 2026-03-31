@@ -495,8 +495,8 @@ function App() {
 
             <Stack as="section" id="focus" gap="8">
               <SectionHeading
-                title="Clean, concise, and easier to scan."
-                description="This version stays closer to Chakra's own demo and docs pages: semantic tokens, restrained composition, and much less emphasis on framed surfaces."
+                title="What I focus on."
+                description="My work sits between product-facing frontend engineering, technical leadership, and AI-native execution."
               />
 
               <SimpleGrid columns={{ base: 1, md: 3 }} gap="6">
@@ -523,8 +523,8 @@ function App() {
 
             <Stack as="section" id="experience" gap="8">
               <SectionHeading
-                title="Recent roles and professional context."
-                description="The experience section is intentionally compressed. It gives enough detail to understand the trajectory without turning the homepage into a full CV dump."
+                title="Experience."
+                description="Recent roles across engineering management, senior frontend work, and independent delivery."
               />
 
               <Timeline.Root
@@ -576,8 +576,8 @@ function App() {
 
             <Stack as="section" id="projects" gap="8">
               <SectionHeading
-                title="Selected work and current threads."
-                description="A concise project layer that can later expand into deeper case studies without changing the structure of the page."
+                title="Selected work."
+                description="A few products and projects that reflect how I work: product-minded, technical, and close to real user needs."
               />
 
               <Stack gap="0" separator={<Separator borderColor="border.muted" />}>
@@ -642,18 +642,18 @@ function App() {
             >
               <Stack gap="6">
                 <SectionHeading
-                  title="Use the form to start a conversation."
-                  description="The site does not publish a direct email address. Messages go through the contact form and the server-side endpoint behind it."
+                  title="Get in touch."
+                  description="For AI-native engineering, frontend systems, team transformation, or product work, use the form below."
                 />
 
                 <Stack gap="4">
                   <Stack gap="1">
                     <Text fontSize="sm" fontWeight="medium" color="fg">
-                      Preferred topics
+                      Typical conversations
                     </Text>
                     <Text fontSize="sm" lineHeight="tall" color="fg.muted">
-                      AI-native team transformation, engineering leadership, frontend architecture,
-                      consulting, and product ideas that need a clear execution path.
+                      Engineering leadership, AI-native ways of working, frontend architecture,
+                      product-facing implementation, and delivery problems that need a clearer path.
                     </Text>
                   </Stack>
                 </Stack>
