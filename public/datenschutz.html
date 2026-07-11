@@ -8,6 +8,7 @@
       name="description"
       content="Datenschutzerklärung für SchnackAI, die Bring-your-own-key KI-Sprach-App von Tobias Winkler."
     />
+    <link rel="canonical" href="https://tobiaswinkler.berlin/schnackai/datenschutz" />
     <style>
       :root {
         color-scheme: dark;
@@ -189,7 +190,7 @@
           Konten bei Drittanbietern für KI-Dienste zu verbinden und Anfragen direkt an die jeweils
           ausgewählten Anbieter zu senden.
         </p>
-        <a class="lang" href="/privacy.html">Read the English version</a>
+        <a class="lang" href="/schnackai/privacy">Read the English version</a>
       </section>
 
       <section class="card meta">
@@ -206,13 +207,20 @@
         </div>
         <div class="meta-block">
           <span class="meta-label">Stand</span>
-          29. März 2026
+          11. Juli 2026
         </div>
       </section>
 
       <div class="grid">
         <section class="card">
           <h2>1. Worum es in dieser Erklärung geht</h2>
+          <p>
+            <strong>Kurz gesagt:</strong> Ich erhalte über SchnackAI keine Gesprächsinhalte,
+            Sprachaufnahmen oder API-Schlüssel. SchnackAI benötigt kein Benutzerkonto, hat kein
+            zentrales SchnackAI-Backend für KI-Anfragen und enthält keine Werbung oder
+            Nutzungsanalyse. Inhalte bleiben lokal auf deinem Gerät oder werden von der App direkt
+            an Dienste übermittelt, die du selbst auswählst.
+          </p>
           <p>
             Diese Erklärung beschreibt, wie SchnackAI personenbezogene Daten verarbeitet, wenn du
             die App nutzt. Sie bezieht sich auf die App selbst und auf die Datenverarbeitung, die
@@ -247,8 +255,15 @@
             <li>API-Schlüssel für Anbieter werden getrennt in sicherem Gerätespeicher abgelegt.</li>
             <li>
               Die App und das Betriebssystem können temporäre lokale Cache-Dateien für
-              Sprachverarbeitung, Wiedergabe oder exportierte Logs anlegen. Diese Dateien bleiben
-              auf dem Gerät, bis sie von der App, vom Betriebssystem oder von dir entfernt werden.
+              Sprachverarbeitung und Wiedergabe anlegen. Aufnahmen werden nach Abschluss eines
+              Verarbeitungsvorgangs grundsätzlich gelöscht; Cache-Dateien können bis zur Löschung
+              durch die App, das Betriebssystem oder dich auf dem Gerät verbleiben.
+            </li>
+            <li>
+              Diagnoseprotokolle werden nur erstellt, wenn du die Debug-Aufzeichnung bewusst
+              startest. Beim Beenden wird der Inhalt lokal in eine Datei geschrieben und in die
+              Zwischenablage kopiert. Eine Übermittlung an mich erfolgt nur, wenn du ihn selbst
+              teilst.
             </li>
           </ul>
           <p>
@@ -283,7 +298,9 @@
           <p>
             Einige Sprachfunktionen können lokal auf dem Gerät oder über native Sprachframeworks des
             Betriebssystems ausgeführt werden. In diesen Fällen kann die Verarbeitung direkt auf dem
-            Gerät oder über Apple-Systemdienste stattfinden, abhängig von Funktion und Plattform.
+            Gerät oder über Sprachdienste des Betriebssystems beziehungsweise Geräteherstellers
+            stattfinden, insbesondere von Apple oder Google. Ob die Erkennung vollständig lokal
+            erfolgt, hängt von Plattform, Gerät, Sprache und Systemeinstellungen ab.
           </p>
           <p>
             Wenn du auf einen providerbasierten Sprachmodus wechselst, verarbeitet der ausgewählte
@@ -305,20 +322,20 @@
         <section class="card">
           <h2>7. Analytics und Tracking</h2>
           <p>
-            Nach der aktuellen Architektur verwendet SchnackAI kein separates Analytics-, Werbe- oder
+            SchnackAI verwendet kein Analytics-, Werbe-, Crash-Reporting- oder
             Produkt-Tracking-SDK, um Nutzerinnen oder Nutzer app- oder websiteübergreifend zu
             profilieren.
           </p>
           <p>
-            Apple, der App Store oder die von dir eingesetzten Drittanbieter können Daten nach ihren
-            eigenen Richtlinien verarbeiten. Diese Drittverarbeitungen sind nicht Gegenstand dieser
-            Erklärung.
+            Der App Store, Google Play, das Betriebssystem oder die von dir eingesetzten
+            Drittanbieter können Daten nach ihren eigenen Richtlinien verarbeiten. Ich erhalte über
+            SchnackAI keine eigenen Nutzungsprofile oder Gesprächsanalysen.
           </p>
         </section>
 
         <section class="card">
           <h2>8. Rechtsgrundlagen nach DSGVO</h2>
-          <p>Wenn die DSGVO auf dich anwendbar ist, kommen insbesondere folgende Rechtsgrundlagen in Betracht:</p>
+          <p>Wenn die DSGVO anwendbar ist, kommen insbesondere folgende Rechtsgrundlagen in Betracht:</p>
           <ul>
             <li>
               Art. 6 Abs. 1 lit. b DSGVO, soweit die Verarbeitung erforderlich ist, um die von dir
@@ -327,14 +344,16 @@
             </li>
             <li>
               Art. 6 Abs. 1 lit. f DSGVO, soweit die Verarbeitung für berechtigte Interessen wie
-              Sicherheit, Missbrauchsprävention, Debugging und den zuverlässigen Betrieb der App
-              erforderlich ist.
-            </li>
-            <li>
-              Art. 6 Abs. 1 lit. a DSGVO, soweit eine Einwilligung relevant ist, etwa wenn dein
-              Gerät eine Mikrofonfreigabe abfragt.
+              Sicherheit, Fehleranalyse und den zuverlässigen Betrieb der App und dieser Website
+              erforderlich ist. Das berechtigte Interesse besteht in einem sicheren und
+              funktionsfähigen Angebot.
             </li>
           </ul>
+          <p>
+            Die Mikrofon- und Spracherkennungsfreigaben deines Betriebssystems sind technische
+            Berechtigungen. Du kannst sie jederzeit in den Systemeinstellungen widerrufen; dann
+            stehen die betreffenden Sprachfunktionen nicht mehr zur Verfügung.
+          </p>
         </section>
 
         <section class="card">
@@ -342,7 +361,8 @@
           <ul>
             <li>
               Lokal in der App gespeicherte Daten bleiben auf deinem Gerät, bis du sie löschst, die
-              App entfernst oder sie im Rahmen der normalen Nutzung überschrieben werden.
+              App entfernst oder sie im Rahmen der normalen Nutzung überschrieben werden. Einzelne
+              Gesprächssitzungen kannst du in der App löschen.
             </li>
             <li>API-Schlüssel bleiben im sicheren Gerätespeicher, bis du sie entfernst oder ersetzt.</li>
             <li>
@@ -363,6 +383,11 @@
             Anbieters solltest du deshalb dessen Datenschutzrichtlinie, Sicherheitsdokumentation und
             regionale Verarbeitungsbedingungen prüfen.
           </p>
+          <p>
+            Welche Region und welche Garantien nach Kapitel V DSGVO gelten, hängt vom ausgewählten
+            Anbieter, deinem dortigen Konto und dessen Vertragsbedingungen ab. SchnackAI legt keine
+            zentrale Verarbeitungsregion für diese direkten Provider-Anfragen fest.
+          </p>
         </section>
 
         <section class="card">
@@ -378,20 +403,62 @@
             Löschungs- und Auskunftshandlungen direkt in der App, auf deinem Gerät oder beim
             jeweiligen Drittanbieter vorgenommen werden.
           </p>
+          <p>
+            Du hast außerdem das Recht, dich bei einer Datenschutzaufsichtsbehörde zu beschweren.
+            Zuständig am Sitz des Verantwortlichen ist die
+            <a href="https://www.datenschutz-berlin.de/buergerinnen-und-buerger/beschwerde/">
+              Berliner Beauftragte für Datenschutz und Informationsfreiheit</a>.
+          </p>
         </section>
 
         <section class="card">
-          <h2>12. Kontakt</h2>
+          <h2>12. Pflicht zur Bereitstellung und automatisierte Entscheidungen</h2>
+          <p>
+            Die Bereitstellung von Gesprächsinhalten, Audio und API-Schlüsseln ist weder gesetzlich
+            vorgeschrieben noch allgemein verpflichtend. Ohne die jeweils erforderlichen Daten kann
+            die ausgewählte Sprach-, KI- oder Suchfunktion jedoch nicht ausgeführt werden.
+          </p>
+          <p>
+            SchnackAI trifft keine ausschließlich automatisierten Entscheidungen mit rechtlicher
+            oder vergleichbar erheblicher Wirkung im Sinne von Art. 22 DSGVO. KI-Ausgaben dienen
+            ausschließlich als vom Nutzer angeforderte Inhalte.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>13. Aufruf dieser Datenschutzerklärung</h2>
+          <p>
+            Beim Aufruf dieser Website verarbeitet der eingesetzte Webhosting-Anbieter technisch
+            erforderliche Verbindungsdaten, insbesondere IP-Adresse, Zeitpunkt, aufgerufene URL,
+            Browser- beziehungsweise Geräteangaben und gegebenenfalls die zuvor besuchte Seite. Die
+            Verarbeitung dient der Auslieferung, Stabilität und Sicherheit der Website auf Grundlage
+            von Art. 6 Abs. 1 lit. f DSGVO. Protokolle werden gelöscht, sobald sie für diese Zwecke
+            und etwaige Sicherheitsnachweise nicht mehr erforderlich sind.
+          </p>
+          <p>
+            Diese Seite setzt keine Analyse- oder Werbe-Cookies und bindet keine externen
+            Trackingdienste ein.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>14. Kontakt</h2>
           <p>
             Bei datenschutzbezogenen Fragen zu SchnackAI kontaktiere bitte
             <a href="mailto:contact@tobiaswinkler.berlin">contact@tobiaswinkler.berlin</a>.
+          </p>
+          <p>
+            Wenn du mich kontaktierst, verarbeite ich deine Nachricht und Kontaktdaten zur
+            Bearbeitung der Anfrage auf Grundlage von Art. 6 Abs. 1 lit. b oder lit. f DSGVO und
+            lösche sie, sobald die Anfrage erledigt ist und keine gesetzlichen Aufbewahrungspflichten
+            entgegenstehen.
           </p>
         </section>
       </div>
 
       <p class="footer">
-        Diese Seite gilt für die App SchnackAI. Website-spezifische Hinweise für
-        <a href="/">tobiaswinkler.berlin</a> können gesondert veröffentlicht werden.
+        Diese Seite gilt für die App SchnackAI und den Aufruf dieser Erklärung. Zurück zu
+        <a href="/">tobiaswinkler.berlin</a>.
       </p>
     </main>
   </body>

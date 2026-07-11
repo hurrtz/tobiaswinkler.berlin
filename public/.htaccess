@@ -1,6 +1,8 @@
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.html$ - [L]
+RewriteRule ^schnackai/datenschutz/?$ /datenschutz.html [L]
+RewriteRule ^schnackai/privacy/?$ /privacy.html [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]

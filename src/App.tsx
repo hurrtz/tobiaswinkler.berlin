@@ -136,6 +136,7 @@ const projects = [
     name: 'SchnackAI app',
     category: 'Independent product',
     href: undefined,
+    privacyHref: '/schnackai/datenschutz',
     summary:
       'A bring-your-own-key AI product built around flexible conversations, where providers and models can be switched live without breaking the active thread.'
   },
@@ -144,6 +145,7 @@ const projects = [
     name: 'Rasseportrait',
     category: 'Fan project',
     href: 'https://hurrtz.github.io/rasseportrait',
+    privacyHref: undefined,
     summary:
       'A fan project for the podcast "Tierisch Menschlich" by Martin Rütter and Katharina Adick, designed to turn breed-related content into a clearer, more navigable digital format.'
   },
@@ -152,6 +154,7 @@ const projects = [
     name: 'mut-taucher.de',
     category: 'Client project',
     href: 'https://mut-taucher.de',
+    privacyHref: undefined,
     summary:
       'A website for psychotherapeutic support where I built the frontend and the full CRM system behind it.'
   }
@@ -624,9 +627,23 @@ function App() {
                         </Heading>
                       )}
                     </Stack>
-                    <Text fontSize="sm" lineHeight="tall" color="fg.muted">
-                      {project.summary}
-                    </Text>
+                    <Stack gap="2">
+                      <Text fontSize="sm" lineHeight="tall" color="fg.muted">
+                        {project.summary}
+                      </Text>
+                      {project.privacyHref ? (
+                        <Link
+                          href={project.privacyHref}
+                          width="fit-content"
+                          fontSize="sm"
+                          color="blue.fg"
+                          textDecoration="underline"
+                          textUnderlineOffset="0.16em"
+                        >
+                          Datenschutzerklärung
+                        </Link>
+                      ) : null}
+                    </Stack>
                   </Grid>
                 ))}
               </Stack>

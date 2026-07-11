@@ -2,6 +2,9 @@
 
 A React single-page site for `tobiaswinkler.berlin`: portrait hero, contact form, CV, social links, and imprint.
 
+The SchnackAI privacy policy is available at `/schnackai/datenschutz` (German) and
+`/schnackai/privacy` (English). Apache rewrites those stable URLs to the static policy pages.
+
 ## Requirements
 
 - Node.js 20+
