@@ -132,11 +132,11 @@ const experiences = [
 
 const projects = [
   {
-    slug: 'schnackai',
-    name: 'SchnackAI app',
+    slug: 'columbo',
+    name: 'Columbo app',
     category: 'Independent product',
     href: undefined,
-    privacyHref: '/schnackai/datenschutz',
+    privacyHref: '/columbo/datenschutz',
     summary:
       'A bring-your-own-key AI product built around flexible conversations, where providers and models can be switched live without breaking the active thread.'
   },

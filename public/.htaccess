@@ -1,8 +1,10 @@
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.html$ - [L]
-RewriteRule ^schnackai/datenschutz/?$ /datenschutz.html [L]
-RewriteRule ^schnackai/privacy/?$ /privacy.html [L]
+RewriteRule ^schnackai/datenschutz/?$ /columbo/datenschutz [R=301,L]
+RewriteRule ^schnackai/privacy/?$ /columbo/privacy [R=301,L]
+RewriteRule ^columbo/datenschutz/?$ /datenschutz.html [L]
+RewriteRule ^columbo/privacy/?$ /privacy.html [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
