@@ -2,8 +2,9 @@
 
 A React single-page site for `tobiaswinkler.berlin`: portrait hero, contact form, CV, social links, and imprint.
 
-The Columbo privacy policy is available at `/columbo/datenschutz` (German) and
-`/columbo/privacy` (English). The former `/schnackai/...` URLs redirect to the new canonical routes.
+The Mr Broccoli privacy policy is available at `/mrbroccoli/datenschutz` (German) and
+`/mrbroccoli/privacy` (English). The former `/columbo/...` and `/schnackai/...` URLs
+redirect to the new canonical routes.
 
 ## Requirements
 

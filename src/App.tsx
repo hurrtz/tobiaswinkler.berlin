@@ -132,11 +132,11 @@ const experiences = [
 
 const projects = [
   {
-    slug: 'columbo',
-    name: 'Columbo app',
+    slug: 'mrbroccoli',
+    name: 'Mr Broccoli',
     category: 'Independent product',
     href: undefined,
-    privacyHref: '/columbo/datenschutz',
+    privacyHref: '/mrbroccoli/datenschutz',
     summary:
       'A bring-your-own-key AI product built around flexible conversations, where providers and models can be switched live without breaking the active thread.'
   },

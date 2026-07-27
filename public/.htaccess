@@ -1,10 +1,12 @@
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.html$ - [L]
-RewriteRule ^schnackai/datenschutz/?$ /columbo/datenschutz [R=301,L]
-RewriteRule ^schnackai/privacy/?$ /columbo/privacy [R=301,L]
-RewriteRule ^columbo/datenschutz/?$ /datenschutz.html [L]
-RewriteRule ^columbo/privacy/?$ /privacy.html [L]
+RewriteRule ^schnackai/datenschutz/?$ /mrbroccoli/datenschutz [R=301,L]
+RewriteRule ^schnackai/privacy/?$ /mrbroccoli/privacy [R=301,L]
+RewriteRule ^columbo/datenschutz/?$ /mrbroccoli/datenschutz [R=301,L]
+RewriteRule ^columbo/privacy/?$ /mrbroccoli/privacy [R=301,L]
+RewriteRule ^mrbroccoli/datenschutz/?$ /datenschutz.html [L]
+RewriteRule ^mrbroccoli/privacy/?$ /privacy.html [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
