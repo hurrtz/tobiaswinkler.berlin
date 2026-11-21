@@ -211,7 +211,7 @@
         </div>
         <div class="meta-block">
           <span class="meta-label">Last updated</span>
-          July 27, 2026
+          November 21, 2026
         </div>
       </section>
 
@@ -242,6 +242,8 @@
             <li>audio you record when using voice input,</li>
             <li>transcriptions created from that audio,</li>
             <li>prompts, conversation history, and assistant replies,</li>
+            <li>photos you attach, summaries of eligible messages, excerpts from other chats, Council drafts, and generated conversation titles when you use these features,</li>
+            <li>the sharing permissions you choose for each recipient and purpose,</li>
             <li>provider configuration you choose, such as selected models, voices, and speech modes,</li>
             <li>API keys you enter for third-party providers,</li>
             <li>web-search queries and returned source links, if you enable web search,</li>
@@ -277,17 +279,32 @@
         <section class="card">
           <h2>4. How data is sent to third-party providers</h2>
           <p>
-            Mr Broccoli is designed around a bring-your-own-key model. When you configure an AI,
+            Mr Broccoli is designed around a bring-your-own-key model. When you use a connected AI,
             speech-to-text, text-to-speech, or web-search provider, the app sends the relevant
             request directly to the provider you selected, using the API key you supplied.
           </p>
-          <p>This may include, depending on the feature you use:</p>
+          <p>
+            Before a new recipient or use receives your content, the app shows you who will receive
+            it and why. Configuring an API key or switching models does not send conversation content.
+            You can allow or decline each optional use. The following choices apply in app versions
+            with the AI sharing settings.
+          </p>
           <ul>
-            <li>audio for transcription,</li>
-            <li>text prompts and conversation context for AI responses,</li>
-            <li>text for speech synthesis,</li>
-            <li>search queries and related parameters for web search.</li>
+            <li><strong>Replies.</strong> Your selected reply provider receives the current typed or transcribed prompt and any custom reply instructions. With separate permission, it can receive earlier messages and replies or a summary of eligible text. After a provider switch you can explicitly share earlier text from this chat with the new recipient.</li>
+            <li><strong>Photos.</strong> Selecting a photo creates a local draft. Before sending it to a new recipient, you can send it once or allow photos you explicitly attach to that recipient in future.</li>
+            <li><strong>Model Council.</strong> The app names the participating providers and the provider writing the final answer. They receive your question and can exchange draft answers. Shared context must be authorized for everyone who receives it.</li>
+            <li><strong>Search and other chats.</strong> The search provider receives your query and can receive a summary if you have shared that context with it. With separate permission, a reply provider can receive relevant excerpts retrieved locally from other eligible chats.</li>
+            <li><strong>Conversation titles.</strong> Automatic naming sends the first prompt to the reply provider in a separate request. A title you request manually can also use text authorized for that provider.</li>
+            <li><strong>Speech.</strong> The transcription service receives recorded microphone audio. A speech synthesis provider receives the reply or voice-preview text and any instructions for how it should sound.</li>
+            <li><strong>OpenRouter.</strong> The app names both OpenRouter and the company running the selected model. It restricts inference to the disclosed company.</li>
           </ul>
+          <p>
+            You can change a decision in <strong>Settings → Data &amp; privacy → AI sharing</strong>.
+            Withdrawing permission stops future sharing for that use. It cannot recall information
+            already sent. Blocking prompt sharing keeps your saved conversations, export, deletion
+            and settings available. Sharing decisions stay on this installation and are excluded
+            from conversation backups.
+          </p>
           <p>
             I do not operate a central Mr Broccoli backend that relays these core AI and speech
             requests on your behalf. The third-party provider you choose receives the data needed to
@@ -304,6 +321,11 @@
             depends on the platform, device, language, and system settings.
           </p>
           <p>
+            When the system recognizer may use a network service, the app asks before giving it
+            your audio and names the selected service. Verified on-device recognition and downloaded
+            local speech models process the recording on your device.
+          </p>
+          <p>
             If you switch to a provider-based speech mode, the selected provider will process the
             audio or text required for that request.
           </p>
@@ -314,7 +336,7 @@
           <p>I do not sell your personal data.</p>
           <p>Your data may be disclosed only in the following situations:</p>
           <ul>
-            <li>to the third-party providers you explicitly configure and use inside the app,</li>
+            <li>to the providers you authorize for a feature, including the named inference host or system speech service where applicable,</li>
             <li>if you intentionally share conversation content or support logs yourself,</li>
             <li>if disclosure is required by law or necessary to establish, exercise, or defend legal claims.</li>
           </ul>

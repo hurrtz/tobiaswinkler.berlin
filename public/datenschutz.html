@@ -207,7 +207,7 @@
         </div>
         <div class="meta-block">
           <span class="meta-label">Stand</span>
-          27. Juli 2026
+          21. November 2026
         </div>
       </section>
 
@@ -241,6 +241,8 @@
             <li>Audioaufnahmen, die du bei der Spracheingabe erstellst,</li>
             <li>Transkripte, die aus diesen Audioaufnahmen erzeugt werden,</li>
             <li>Prompts, Gesprächsverläufe und Antworten des Assistenten,</li>
+            <li>angehängte Fotos, Zusammenfassungen freigegebener Nachrichten, Auszüge aus anderen Gesprächen, Council-Entwürfe und erzeugte Gesprächstitel, wenn du diese Funktionen nutzt,</li>
+            <li>deine Freigaben je Empfänger und Verwendungszweck,</li>
             <li>von dir gewählte Anbieter- und Modellkonfigurationen, Stimmen und Sprachmodi,</li>
             <li>API-Schlüssel, die du für Drittanbieter eingibst,</li>
             <li>Web-Suchanfragen und zurückgelieferte Quellenlinks, wenn du Websuche aktivierst,</li>
@@ -275,17 +277,34 @@
           <h2>4. Wie Daten an Drittanbieter übermittelt werden</h2>
           <p>
             Mr Broccoli ist als Bring-your-own-key-App konzipiert. Wenn du einen KI-, Sprach- oder
-            Web-Suchanbieter konfigurierst, sendet die App die jeweils erforderliche Anfrage direkt
+            Web-Suchanbieter nutzt, sendet die App die jeweils erforderliche Anfrage direkt
             an den von dir ausgewählten Anbieter und verwendet dabei den von dir hinterlegten API-
             Schlüssel.
           </p>
-          <p>Je nach Funktion kann dies insbesondere umfassen:</p>
+          <p>
+            Bevor ein neuer Empfänger Inhalte erhält oder ein Anbieter sie für einen neuen Zweck
+            nutzt, zeigt dir die App den Empfänger und den Zweck. Das Eintragen eines API-Schlüssels
+            oder ein Modellwechsel überträgt keine Gesprächsinhalte. Über optionale Verwendungen
+            entscheidest du einzeln. Die folgenden Freigaben gelten für App-Versionen mit dem
+            Einstellungsbereich „KI-Freigaben“.
+          </p>
           <ul>
-            <li>Audio zur Transkription,</li>
-            <li>Text-Prompts und Gesprächskontext für KI-Antworten,</li>
-            <li>Text für Sprachsynthese,</li>
-            <li>Suchanfragen und zugehörige Parameter für Websuche.</li>
+            <li><strong>Antworten.</strong> Der gewählte Anbieter erhält deine aktuelle getippte oder transkribierte Nachricht und gegebenenfalls deine individuellen Anweisungen für die Antwort. Frühere Nachrichten, Antworten und Zusammenfassungen daraus haben eine eigene Freigabe. Nach einem Anbieterwechsel kannst du früheren Text aus diesem Gespräch ausdrücklich mit dem neuen Empfänger teilen.</li>
+            <li><strong>Fotos.</strong> Ein ausgewähltes Foto bleibt zunächst im lokalen Entwurf. Beim Senden an einen neuen Empfänger kannst du es einmalig freigeben oder künftig auch Fotos erlauben, die du für diesen Empfänger ausdrücklich anhängst.</li>
+            <li><strong>Model Council.</strong> Die App nennt die teilnehmenden Anbieter und den Anbieter, der die endgültige Antwort formuliert. Sie erhalten deine Frage und können Antwortentwürfe austauschen. Gemeinsamer Gesprächskontext muss für alle beteiligten Empfänger freigegeben sein.</li>
+            <li><strong>Suche und andere Gespräche.</strong> Der Suchanbieter erhält deine Suchanfrage und gegebenenfalls eine Zusammenfassung, wenn dieser Kontext für ihn freigegeben ist. Mit separater Freigabe kann ein Antwortanbieter passende Auszüge aus anderen Gesprächen erhalten. Die App sucht diese Auszüge auf deinem Gerät.</li>
+            <li><strong>Gesprächstitel.</strong> Für einen automatischen Titel erhält der Antwortanbieter die erste Nachricht in einer eigenen Anfrage. Bei einem von dir angeforderten Titel kann er auch für ihn freigegebenen Gesprächstext verwenden.</li>
+            <li><strong>Sprache.</strong> Der Transkriptionsdienst erhält die Mikrofonaufnahme. Ein Anbieter für Sprachausgabe erhält den Antwort- oder Vorschautext sowie gegebenenfalls deine Sprechanweisungen.</li>
+            <li><strong>OpenRouter.</strong> Die App nennt OpenRouter und das Unternehmen, das das gewählte Modell ausführt. Sie beschränkt die Verarbeitung des Modells auf das angezeigte Unternehmen.</li>
           </ul>
+          <p>
+            Du kannst jede Entscheidung unter <strong>Einstellungen → Daten &amp; Datenschutz →
+            KI-Freigaben</strong> ändern. Ein Widerruf stoppt künftige Übertragungen für diesen
+            Zweck. Bereits übermittelte Inhalte kann die App nicht zurückholen. Wenn du die
+            Prompt-Freigabe sperrst, kannst du gespeicherte Gespräche weiterhin lesen,
+            exportieren und löschen sowie die Einstellungen öffnen. Freigaben gelten für diese
+            Installation und sind von Gesprächssicherungen ausgenommen.
+          </p>
           <p>
             Ich betreibe keinen zentralen Mr Broccoli-Backend-Dienst, der diese Kernanfragen für KI
             und Speech stellvertretend weiterleitet. Der von dir gewählte Drittanbieter erhält die
@@ -303,6 +322,12 @@
             erfolgt, hängt von Plattform, Gerät, Sprache und Systemeinstellungen ab.
           </p>
           <p>
+            Kann die Systemerkennung einen Netzwerkdienst einsetzen, nennt dir die App den
+            gewählten Dienst und fragt nach deiner Freigabe, bevor sie ihm die Aufnahme gibt.
+            Eine als lokal bestätigte Systemerkennung und heruntergeladene lokale Sprachmodelle
+            verarbeiten deine Aufnahme auf dem Gerät.
+          </p>
+          <p>
             Wenn du auf einen providerbasierten Sprachmodus wechselst, verarbeitet der ausgewählte
             Anbieter die für die jeweilige Anfrage erforderlichen Audio- oder Textdaten.
           </p>
@@ -313,7 +338,7 @@
           <p>Ich verkaufe keine personenbezogenen Daten.</p>
           <p>Eine Weitergabe kann nur in folgenden Situationen erfolgen:</p>
           <ul>
-            <li>an die Drittanbieter, die du in der App ausdrücklich konfigurierst und nutzt,</li>
+            <li>an die für eine Funktion freigegebenen Anbieter, gegebenenfalls auch an das genannte Unternehmen für die Modellausführung oder den freigegebenen Systemsprachdienst,</li>
             <li>wenn du Gesprächsinhalte oder Support-Logs selbst bewusst teilst oder exportierst,</li>
             <li>wenn eine Offenlegung gesetzlich erforderlich ist oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen notwendig ist.</li>
           </ul>
